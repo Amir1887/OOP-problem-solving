@@ -14,32 +14,32 @@ circle.type = 'circle';
 
 // method
 circle.area = function () {
-  return  Math.PI * radius * radius;
+  return  Math.PI * this.radius * this.radius;
 };
 
 // method
 circle.circumference = function() {
-    return  2 * Math.PI * radius;
+    return  2 * Math.PI * this.radius;
 }
 // factory function 
 function createCircle(radius) {
-    c = Object.create(circle); // inherits from circle
-    c.raduis = radius;
+    const  c = Object.create(circle); // inherits from circle
+    c.radius = radius;
     return c;
 }
 
 const triangle = Object.create(shape);
 triangle.type = 'triangle';
 
-// method
+// method ( this.height, this.base, etc., to refer to object properties. Do not use them directly)
 triangle.area = function() {
-    return 0.5 * base * height
+    return 0.5 * this.base * this.height
 }
 
 
 // factory function 
 function createTriangle(base, height) {
-    t = Object.create(triangle);
+   const t = Object.create(triangle);
     t.base = base;
     t.height = height
     return t;
