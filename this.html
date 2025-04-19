@@ -22,13 +22,26 @@ const buttonManager = {
 buttonManager.renderButtons();
 </script>
 
-🤔 What will happen when you click each button?
+<!-- 🤔 What will happen when you click each button? -->
+"undefined followed by 1 or 2 or 3"
+i is from the outer loop, so it works just fine.
+But this.label becomes undefined because this refers to the button element, not buttonManager
+all of this as we are using regular function expression not arrow fn 
 
-What will be printed when each button is clicked?
+<!-- What will be printed when each button is clicked? -->
+Button 1 clicked - undefined
+Button 2 clicked - undefined
+Button 3 clicked - undefined
 
-Why doesn’t it print what we expect?
 
-How can you fix it so the output becomes like:
+<!-- Why doesn’t it print what we expect? -->
+In this case, since the function is attached as an event listener,
+this refers to the element that triggered the event — which is the button itself. 
+So this.label is looking for a label property on the button DOM element, which doesn’t exist ⇒ undefined.
+
+
+
+<!-- How can you fix it so the output becomes like: -->
 Button 1 clicked - Click Me
 Button 2 clicked - Click Me
 Button 3 clicked - Click Me
