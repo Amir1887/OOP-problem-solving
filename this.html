@@ -1,0 +1,35 @@
+ <!-- 🧩 Real-World Style Challenge: Event Handlers & this
+Imagine you're creating a simple DOM app (e.g., in the browser) that renders buttons and attaches click handlers. Here's the problem: -->
+
+<div id="button-container"></div>
+<script>
+const buttonManager = {
+  label: 'Click Me',
+  renderButtons: function () {
+    for (let i = 1; i <= 3; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = `${this.label} ${i}`;
+      
+      btn.addEventListener('click', function () {
+        console.log(`Button ${i} clicked - ${this.label}`);
+      });
+
+      document.getElementById('button-container').appendChild(btn);
+    }
+  }
+};
+
+buttonManager.renderButtons();
+</script>
+
+🤔 What will happen when you click each button?
+
+What will be printed when each button is clicked?
+
+Why doesn’t it print what we expect?
+
+How can you fix it so the output becomes like:
+Button 1 clicked - Click Me
+Button 2 clicked - Click Me
+Button 3 clicked - Click Me
+
