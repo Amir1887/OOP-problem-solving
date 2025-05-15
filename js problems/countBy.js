@@ -31,4 +31,3 @@ countBy(10, 6); // [10, 20, 30, 40, 50, 60]
 countBy(100, 5); // [100, 200, 300, 400, 500]
 
 // solve the Count by x challenge using more functional approaches like Array.from() and map().
-
